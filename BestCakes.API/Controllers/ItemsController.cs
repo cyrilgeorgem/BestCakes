@@ -38,5 +38,21 @@ namespace BestCakes.API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        // GET: api/GetItemList
+        [HttpGet("GetItemById")]
+        public async Task<IActionResult> GetItemById(int itemId)//Task<IActionResult<List<ItemModel>>>
+        {
+            try
+            {
+                ItemModel itemObj = new ItemModel();
+                itemObj = await _itemRepository.GetItemByIDAsync(itemId);
+                return Ok(itemObj);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
