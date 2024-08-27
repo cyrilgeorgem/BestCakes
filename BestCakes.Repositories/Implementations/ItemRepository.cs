@@ -18,9 +18,9 @@ namespace BestCakes.Repositories.Implementations
             _bestCakesDbContext = bestCakesDbContext;
         }
 
-        public async Task<List<ItemModel>> GetAllItemsAsync()
+        public async Task<IEnumerable<ItemModel>> GetAllItemsAsync()
         {
-            List<ItemModel> itemList = await (from item in _bestCakesDbContext.TblBcitems
+            IEnumerable<ItemModel> itemList = await (from item in _bestCakesDbContext.TblBcitems
                                             select new ItemModel
                                             {
                                                 ItemId = item.ItemId,

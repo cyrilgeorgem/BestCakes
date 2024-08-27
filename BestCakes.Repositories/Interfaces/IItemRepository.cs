@@ -9,7 +9,7 @@ namespace BestCakes.Repositories.Interfaces
 {
     public interface IItemRepository
     {
-        Task<List<ItemModel>> GetAllItemsAsync();
+        Task<IEnumerable<ItemModel>> GetAllItemsAsync();
         Task<ItemModel> GetItemByIDAsync(int itemId);
         Task<bool> AddItemAsync(ItemModel employee);
         Task<bool> UpdateItemAsync(ItemModel employee);

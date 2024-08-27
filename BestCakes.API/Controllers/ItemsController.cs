@@ -29,8 +29,7 @@ namespace BestCakes.API.Controllers
         {
             try
             {
-                List<ItemModel> itemList = new List<ItemModel>();
-                itemList = await _itemRepository.GetAllItemsAsync();
+                IEnumerable<ItemModel> itemList = await _itemRepository.GetAllItemsAsync();
                 return Ok(itemList);
             }
             catch (Exception ex)
